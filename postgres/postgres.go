@@ -9,13 +9,14 @@ import (
 )
 
 type Config struct {
-	User         string
-	Pass         string
-	Host         string
-	Port         int
-	Database     string
-	SSLMode      string
-	PoolMaxConns int
+	User         string `cfg:"user"`
+	Pass         string `cfg:"password"`
+	Host         string `cfg:"host"`
+	Port         int    `cfg:"port"`
+	Database     string `cfg:"database"`
+	Schema       string `cfg:"schema"`
+	SSLMode      string `cfg:"sslmode"`
+	PoolMaxConns int    `cfg:"max_open_conns"`
 }
 
 //DefaultConfig return
@@ -33,6 +34,7 @@ func DefaultConfig() *Config {
 		Database:     "postgres",
 		User:         "postgres",
 		Pass:         "postgres",
+		Schema:       "public",
 		SSLMode:      "disable",
 		PoolMaxConns: 10,
 	}

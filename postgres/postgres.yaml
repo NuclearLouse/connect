@@ -1,0 +1,9 @@
+postgres:
+  host           : localhost
+  port           : 5432
+  database       : db_name
+  schema         : public
+  user           : postgres
+  password       : postgres
+  sslmode        : disable
+  max_open_conns : 25
